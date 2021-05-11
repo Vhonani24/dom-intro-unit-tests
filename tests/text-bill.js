@@ -1,5 +1,5 @@
 describe('The text bill factory function', function(){
-    it('should be able to take the string "call" & return the bill for1 call', function(){
+    it('should be able to take the string "call" & return the bill for 1 call set at R2.75', function(){
 
         let textBill = billText();
 
@@ -10,7 +10,7 @@ describe('The text bill factory function', function(){
         assert.equal(2.75, textBill.getTextBillString('call'));
 
     });
-    it('should be able to take the string "call" & return the bill for 2 call', function(){
+    it('should be able to take the string "call" & return the bill for 2 calls set at R2.75 each', function(){
 
         let textBill = billText();
 
@@ -22,7 +22,7 @@ describe('The text bill factory function', function(){
         assert.equal(5.50, textBill.getTextBillString('call'));
 
     });
-    it('should be able to take the string "sms" & return the bill for 1 sms', function(){
+    it('should be able to take the string "sms" & return the bill for 1 sms set at R0.75', function(){
         let textBill = billText();
 
         textBill.setSmsAmount();
@@ -32,7 +32,7 @@ describe('The text bill factory function', function(){
         assert.equal(0.75, textBill.getTextBillString('sms'));
 
     });
-    it('should be able to take the string "sms" & return the bill for 2 sms', function(){
+    it('should be able to take the string "sms" & return the bill for 2 sms set at R0.75 each', function(){
         let textBill = billText();
 
         textBill.setSmsAmount();
@@ -44,7 +44,7 @@ describe('The text bill factory function', function(){
 
     });
     
-    it('should be able to take the string "sms" & "call" and return the total bill', function(){
+    it('should be able to take the string "sms"  & "call" and return the total bill for a call set at R2.75 and sms set at R0.75', function(){
         let textBill = billText();
 
         textBill.setSmsAmount();
@@ -118,10 +118,8 @@ describe('The text bill factory function', function(){
             textBill.ringCall();
             textBill.ringCall();
             textBill.ringCall();
-            textBill.ringCall();
+            textBill.ringCall();    
             
-            
-
         
             assert.equal(1.50, textBill.getTextBillString('sms'));
             assert.equal(57.75, textBill.getTextBillString('call'));

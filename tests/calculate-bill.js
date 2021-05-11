@@ -1,6 +1,6 @@
 describe('The calculate bill factory function', function(){
 
-    it('should be able to take the string "call" and return the bill for 1 call made', function(){
+    it('should be able to take the string "call" and return the bill for 1 call made set at R2.75', function(){
 
         let calculateBill = billCalculations();
 
@@ -8,7 +8,7 @@ describe('The calculate bill factory function', function(){
         assert.equal(2.75, calculateBill.getBillString('call'));
     });
 
-    it('should be able to take the string "sms" and return the bill for 1 sms made', function(){
+    it('should be able to take the string "sms" and return the bill for 1 sms made set at R0.75', function(){
 
         let calculateBill = billCalculations();
 
@@ -16,7 +16,7 @@ describe('The calculate bill factory function', function(){
         assert.equal(0.75, calculateBill.getBillString('sms'));
     });
     
-    it('should be able to get a string with calls & sms and calculate the total bill cost', function(){
+    it('should be able to take in a string with calls & sms and calculate the total bill', function(){
 
         let calculateBill = billCalculations();
 

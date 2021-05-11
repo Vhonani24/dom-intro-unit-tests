@@ -1,12 +1,9 @@
 function billText(){
     var theCallAmount = 0;
-    var theSmsAmount = 0;
-    var theWarningLevel = 0;
-    var theCriticalLevel = 0;
-
+    var theSmsAmount = 0;   
     var totalCallAmount = 0;
     var totalSmsAmount = 0;
-    var totalAmount = 0;
+    
     
     function setCallAmount() {
         theCallAmount = 2.75;
@@ -51,23 +48,18 @@ function billText(){
     }
 
     function getTextClassName(){
-        if(getTotalAmount() >= 30 && getTotalAmount() <= 50){
+        if(getTotalAmount() >= 30 && getTotalAmount() < 50){
           return 'warning';
         }
-        if(getTotalAmount() >= 30){
+        if(getTotalAmount() >= 50){
           return 'danger';
         }
     }
-    
-
-
-    
     
     
     
     return{
 
-    
         setCallAmount,
         setSmsAmount,
         getCallAmount,
@@ -80,7 +72,6 @@ function billText(){
         getTextBillString,
         getTextClassName
         
-
 
     }
 }
