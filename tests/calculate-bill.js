@@ -1,18 +1,43 @@
 describe('The calculate bill factory function', function(){
-    it('Calculates the total bill for 1 call made', function(){
+
+    it('should be able to take the string "call" and return the bill for 1 call made', function(){
+
+        let calculateBill = billCalculations();
+
        
-        assert.equal(2.75, calculateBill('call'));
+        assert.equal(2.75, calculateBill.getBillString('call'));
     });
-    it('Calculates the total bill for 1 sms made', function(){
+
+    it('should be able to take the string "sms" and return the bill for 1 sms made', function(){
+
+        let calculateBill = billCalculations();
+
        
-        assert.equal(0.65, calculateBill('sms'));
+        assert.equal(0.75, calculateBill.getBillString('sms'));
     });
-    it('Calculates the total bill for 1 sms & 2 calls made', function(){
+    
+    it('should be able to get a string with calls & sms and calculate the total bill cost', function(){
+
+        let calculateBill = billCalculations();
+
        
-        assert.equal(6.15, calculateBill('sms,call,call'));
+        assert.equal(6.25, calculateBill.getBillString('call,call,sms'));
+    }); 
+    describe('warning & critical level', function(){
+        it('should be able to return "warning" when warning level is reached', function(){
+            let calculateBill = billCalculations();
+            
+            assert.equal(23.25, calculateBill.getBillString('call, sms, call, sms, sms,call, sms, call, sms, sms,call, sms, call, sms, sms'));
+            assert.equal('warning', calculateBill.setClasses());
+        }); 
+        it('should be able to return "danger" when critical level is reached', function(){
+            let calculateBill = billCalculations();
+            
+            assert.equal(31.00, calculateBill.getBillString('call, sms, call, sms, sms,call, sms, call, sms, sms,call, sms, call, sms, sms,call, sms, call, sms, sms'));
+            assert.equal('danger', calculateBill.setClasses());
+        }); 
+
+
     });
-    it('should return "warning" after warning level has been reached', function(){
-       
-        assert.equal('warning', calculateBill('call, sms, call, sms, sms,call, sms, call, sms, sms,call, sms, call, sms, sms'));
-    });
+   
 });

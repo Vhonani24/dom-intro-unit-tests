@@ -61,6 +61,11 @@ function billWithSettings() {
         }
        
     }
+    function stopCostCount(){
+        if(getTotalCost() >= getCriticalLevel()){
+            return theCritical;
+        }
+    }
    
 
 
@@ -79,7 +84,8 @@ function billWithSettings() {
         getTotalCallCost,
         getTotalSmsCost,
         sendSms,
-        getClassName
+        getClassName,
+        stopCostCount
 
 
     }
