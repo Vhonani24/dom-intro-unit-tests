@@ -75,7 +75,7 @@ describe('The bill with settings factory function', function(){
             assert.equal(2.66, settingsBill.getTotalCallCost());
             assert.equal(0.00, settingsBill.getTotalSmsCost());
         });
-        it('should be able to use call cost set for 2 calls at R2.32 each', function(){
+        it('should be able to use call cost set for 2 calls at 2.32 each', function(){
             let settingsBill = billWithSettings();
          
             
@@ -89,7 +89,7 @@ describe('The bill with settings factory function', function(){
             assert.equal(4.64, settingsBill.getTotalCallCost());
             assert.equal(0.00, settingsBill.getTotalSmsCost());
         });
-        it('should be able to use sms cost set for 2 sms at R0.32 each', function(){
+        it('should be able to use sms cost set for 2 sms at 0.32 each', function(){
             let settingsBill = billWithSettings();
            
 
@@ -104,7 +104,7 @@ describe('The bill with settings factory function', function(){
             assert.equal(0.00, settingsBill.getTotalCallCost());
             assert.equal(0.64, settingsBill.getTotalSmsCost());
         });
-        it('should be able to use sms cost set for 3 sms at R0.75 each & call cost set for 3 calls at R2.75 each', function(){
+        it('should be able to use sms cost set for 3 sms at 0.75 each & call cost set for 3 calls at 2.75 each', function(){
             let settingsBill = billWithSettings();
         
         

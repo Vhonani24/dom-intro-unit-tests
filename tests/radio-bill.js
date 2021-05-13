@@ -1,5 +1,5 @@
 describe('The radio bill factory function', function(){
-    it('should be able to return the bill for 1 call set at R2.75 when call option is selected', function(){
+    it('should be able to return the bill for 1 call set at 2.75 when call option is selected', function(){
 
         let radioBill = radioBills();
 
@@ -10,7 +10,7 @@ describe('The radio bill factory function', function(){
         assert.equal(2.75, radioBill.getRadioBillString('call'));
 
     });
-    it('should be able to return the bill for 2 calls set at R2.75 each when call option is selected', function(){
+    it('should be able to return the bill for 2 calls set at 2.75 each when call option is selected', function(){
 
         let radioBill = radioBills();
 
@@ -22,7 +22,7 @@ describe('The radio bill factory function', function(){
         assert.equal(5.50, radioBill.getRadioBillString('call'));
 
     });
-    it('should be able to return the bill for 1 sms set at R0.75 each when sms option is selected', function(){
+    it('should be able to return the bill for 1 sms set at 0.75 each when sms option is selected', function(){
         let radioBill = radioBills();
 
         radioBill.setRadioSmsAmount();
@@ -32,7 +32,7 @@ describe('The radio bill factory function', function(){
         assert.equal(0.75, radioBill.getRadioBillString('sms'));
 
     });
-    it('should be able to return the bill for 2 sms set at R0.75 each when sms option is selected', function(){
+    it('should be able to return the bill for 2 sms set at 0.75 each when sms option is selected', function(){
         let radioBill = radioBills();
 
         radioBill.setRadioSmsAmount();
@@ -44,7 +44,7 @@ describe('The radio bill factory function', function(){
 
     });
     
-    it('should be able to return the total bill for "sms"  & "call" for a call set at R2.75 and sms set at R0.75 when both options are selected', function(){
+    it('should be able to return the total bill for "sms"  & "call" for a call set at 2.75 and sms set at 0.75 when both options are selected', function(){
         let radioBill = radioBills();
 
         radioBill.setRadioSmsAmount();
