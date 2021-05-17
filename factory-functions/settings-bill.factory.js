@@ -66,6 +66,17 @@ function billWithSettings() {
             return theCritical;
         }
     }
+    //just testing
+    function getSettingsBillString(str){
+        if(str === "call"){
+            return stopCostCount();
+        }
+        if(str === "sms"){
+            return stopCostCount();
+            
+        }
+       
+    }
    
 
 
@@ -85,7 +96,8 @@ function billWithSettings() {
         getTotalSmsCost,
         sendSms,
         getClassName,
-        stopCostCount
+        stopCostCount,
+        getSettingsBillString
 
 
     }

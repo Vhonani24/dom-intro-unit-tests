@@ -181,10 +181,12 @@ describe('The bill with settings factory function', function(){
             settingsBill.makeCall();
             settingsBill.makeCall();
             settingsBill.makeCall();
-            settingsBill.makeCall();             
+            settingsBill.makeCall();
             
+            
+            assert.equal(10, settingsBill.getSettingsBillString('call'))
             assert.equal('danger', settingsBill.getClassName());
-            assert.equal(10, settingsBill.stopCostCount());
+            //assert.equal(10, settingsBill.stopCostCount());
         });
         
         

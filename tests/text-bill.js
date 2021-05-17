@@ -83,6 +83,8 @@ describe('The text bill factory function', function(){
             textBill.ringCall();
 
         
+
+        
             assert.equal(1.50, textBill.getTextBillString('sms'));
             assert.equal(33.00, textBill.getTextBillString('call'));
             assert.equal(34.50, textBill.getTotalAmount());
