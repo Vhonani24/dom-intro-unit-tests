@@ -3,15 +3,15 @@ function billCalculations(){
 
   function getBillString(str){
     var _str = str.split(',');//convert string into an array
-    
    
     
     for(var i=0;i < _str.length;i++){//loop thru the array
+      var trimStr = _str[i].trim();
      
-      if(_str[i].includes('call')) {//check condition for calls
+      if(trimStr.includes('call')) {//check condition for calls
         total += 2.75;//push in all reg from town into result
       }
-      if(_str[i].includes('sms')){
+      if(trimStr.includes('sms')){
         total += 0.75;//check condition for messages
       }
     }
